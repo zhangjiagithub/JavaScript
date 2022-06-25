@@ -3,8 +3,6 @@ Function.prototype.autoCall = function(_this, ...arg) {
     _this = _this ? Object(_this) : window
     // 2、绑定调用的函数
     _this.changeThis = this // 谁调用autoApply,this就指向谁,所以此时this指向foo函数
-    // 3、处理arg参数
-    arg = arg || '' // 当arg为空时，默认为空数组
     // 4、掉用changThis函数
     let newThis = _this.changeThis(...arg || '')
     delete _this.changeThis
